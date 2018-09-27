@@ -3,7 +3,7 @@
 $(document).ready(function(){
 
     // Create a click function for the buttons to create GIFs
-    $('.gif-buttons').on("click", function(){
+    $('body').on("click", ".gif-buttons", function(){
         // Assign a variable to the buttons data-search attribute to include in API variable
         var x = $(this).data("search");
 
@@ -33,7 +33,7 @@ $(document).ready(function(){
     // Create another click function for the search button to apply another button for whatever GIFs you want to see
     $('#search').on("click", function () {
         var value = $("#searchvalue").val().trim();
-        var newButton = ("<button class='gif-buttons' data-search=" + value + ">" + value + "</button>");
+        var newButton = ("<button class='gif-buttons' data-state='still' data-search=" + value + ">" + value + "</button>");
         $("#button-div").append(" " + newButton + " ");
     });
 });

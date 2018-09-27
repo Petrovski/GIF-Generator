@@ -1,15 +1,32 @@
 h1 {
     color: red;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-#gif-div {
+h3 {
+    text-align: center;
+}
+
+img {
+    size: 200px;
+}
+
+div#gifs-div {
     margin: 20px;
 }
 
-#input-div {
+div#input-div {
+    /* padding: 50px; */
     float: right;
 }
 
+div#button-div {
+    margin: 20px;
+}
+
 .gif-buttons {
-    background: red;
+    background: lightblue;
+    padding: 20px;
+    border-radius: 10px 10px 10px 1px;
 }
