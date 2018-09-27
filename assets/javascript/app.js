@@ -21,7 +21,7 @@ $(document).ready(function(){
             for (let i = 0; i < response.data.length; i++) {
                 var gifDiv = $("<div>");
                 var p = $("<p>").text("Rating: " +response.data[i].rating);
-                var gifImg = $("<img>");
+                var gifImg = $("<img class='gif'>");
                 gifImg.attr("src", response.data[i].images.fixed_height.url);
                 gifDiv.append(p);
                 gifDiv.append(gifImg);
@@ -38,3 +38,17 @@ $(document).ready(function(){
     });
 });
 
+
+$("body").on("click", ".gif", function () {
+    
+    var state = $(this).attr("data-state");
+    console.log(state);
+
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"))
+        $(this).attr("data-state", "animate")
+    } else {
+        $(this).attr("src", $(this).attr("data-still"))
+        $(this).attr("data-state", "still")
+    }
+});

@@ -8,10 +8,6 @@ h3 {
     text-align: center;
 }
 
-img {
-    size: 200px;
-}
-
 div#gifs-div {
     margin: 20px;
 }
@@ -27,6 +23,6 @@ div#button-div {
 
 .gif-buttons {
     background: lightblue;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px 10px 10px 1px;
 }
