@@ -16,13 +16,15 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response)
             
             // Use a for a loop to loop through the array given to us from the API, and apply (prepend) the GIFs and ratings to the HTML page
             for (let i = 0; i < response.data.length; i++) {
                 var gifDiv = $("<div>");
                 var p = $("<p>").text("Rating: " +response.data[i].rating);
                 var gifImg = $("<img class='gif'>");
-                gifImg.attr("src", response.data[i].images.fixed_height.url);
+                gifImg.attr("src", response.data[i].images.fixed_height_still.url);
+                gifImg.addClass("img-thumbnail")
                 gifDiv.append(p);
                 gifDiv.append(gifImg);
                 $("#gifs-div").prepend(gifDiv);
@@ -38,7 +40,7 @@ $(document).ready(function(){
     });
 });
 
-
+// Another click function here for toggling the data-state on the gifs themself
 $("body").on("click", ".gif", function () {
     
     var state = $(this).attr("data-state");
@@ -49,6 +51,6 @@ $("body").on("click", ".gif", function () {
         $(this).attr("data-state", "animate")
     } else {
         $(this).attr("src", $(this).attr("data-still"))
-        $(this).attr("data-state", "still")
+        $(this).attr("data-state", "still");
     }
 });
